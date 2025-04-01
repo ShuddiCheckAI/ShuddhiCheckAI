@@ -1,0 +1,18 @@
+# Ignore folders
+ai_models/
+en_core_web_sm/
+node_modules/
+__pycache__/
+
+# Ignore model files
+shuddhicheck_ai_model.h5
+*.h5  # General rule for other .h5 files too
+
+# Ignore logs and temp files
+*.log
+*.tmp
+.DS_Store
+*.pyc
+*.pyo
+*.pyd
+

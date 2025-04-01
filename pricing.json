@@ -1,0 +1,25 @@
+{
+    "services": [
+      {
+        "name": "AI-Powered Public Health Compliance Monitoring",
+        "price": "$99 per month",
+        "description": "Real-time monitoring and compliance assessments using AI technology."
+      },
+      {
+        "name": "Automated Compliance Risk Assessment",
+        "price": "$199 per month",
+        "description": "AI-powered risk assessment to identify potential public health violations."
+      },
+      {
+        "name": "Regulatory Compliance Audits & Reports",
+        "price": "$299 per month",
+        "description": "AI analyzes policies and generates real-time compliance reports."
+      },
+      {
+        "name": "AI-Driven Health Policy & Regulation Analysis",
+        "price": "$149 per month (Custom Pricing Available)",
+        "description": "Providing insights for informed decision-making."
+      }
+    ]
+  }cmd+s
+  

@@ -1,0 +1,110 @@
+# ShuddhiCheck AI - Backend AI Processing (Python) & Frontend Interface (React)
+
+### This document will contain both the backend (Python) and frontend (React) components for ShuddhiCheck AI.
+### Backend: AI processing system for public health compliance monitoring.
+### Frontend: React-based user interface for user interaction and dashboard viewing.
+
+
+# Importing necessary libraries for AI processing
+import numpy as np
+import pandas as pd
+import tensorflow as tf
+import spacy
+from sklearn.model_selection import train_test_split
+from flask import Flask, jsonify, request
+from tensorflow import keras
+import random
+import json
+
+# NLP Initialization
+nlp = spacy.load('en_core_web_sm')
+
+# Data Preprocessing Function
+
+def preprocess_text(text):
+    doc = nlp(text)
+    return ' '.join([token.lemma_ for token in doc if not token.is_stop and not token.is_punct])
+
+
+# Mock Data Collection Function
+
+def collect_data():
+    # This will be replaced by actual data collection from public health guidelines and regulatory documents
+    data = {
+        'document': [
+            'Health regulations for hospital management',
+            'Infection control guidelines',
+            'Patient privacy compliance policies'
+        ],
+        'label': [1, 1, 0]  # 1 = Compliant, 0 = Non-Compliant
+    }
+    return pd.DataFrame(data)
+
+
+# Data Preparation
+
+data = collect_data()
+data['processed_text'] = data['document'].apply(preprocess_text)
+
+
+# Splitting Data
+X_train, X_test, y_train, y_test = train_test_split(
+    data['processed_text'], data['label'], test_size=0.2, random_state=42
+)
+
+# Simple AI Model for Compliance Checking
+model = tf.keras.Sequential([
+    tf.keras.layers.InputLayer(input_shape=(1,)),
+    tf.keras.layers.Dense(64, activation='relu'),
+    tf.keras.layers.Dense(1, activation='sigmoid')
+])
+
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Mock Training Process
+model.fit(np.array([[1], [2], [3]]), np.array([1, 0, 1]), epochs=5)
+
+# Saving Model for Integration
+model.save('shuddhicheck_ai_model.h5')
+
+
+app = Flask(__name__)
+model = keras.models.load_model('shuddhicheck_ai_model.h5')
+
+
+# Chatbot Logic
+responses = {
+    "greeting": ["Hello! How can I assist you today?", "Hi there! What can I do for you?"],
+    "about": ["ShuddhiCheck AI is an AI-powered public health compliance monitoring platform.",
+              "We help organizations comply with health regulations through AI-driven analysis."],
+    "pricing": ["Our pricing plans are available on our website. Would you like me to guide you?"],
+    "compliance_check": ["You can upload your document, and I'll check it for compliance.",
+                         "Please provide the document, and I'll start the compliance analysis."],
+}
+
+def generate_response(user_input):
+    user_input = user_input.lower()
+    if "hello" in user_input or "hi" in user_input:
+        return random.choice(responses["greeting"])
+    elif "what is shuddhicheck ai" in user_input or "about" in user_input:
+        return random.choice(responses["about"])
+    elif "pricing" in user_input:
+        return random.choice(responses["pricing"])
+    elif "compliance check" in user_input or "check document" in user_input:
+        return random.choice(responses["compliance_check"])
+    else:
+        return "I'm here to help! Could you please provide more details?"
+
+
+@app.route('/chat', methods=['POST'])
+def chat():
+    user_input = request.json.get('message')
+    response = generate_response(user_input)
+    return jsonify({'response': response})
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
+cmd+setting
+# React Frontend Code
+import React, { useState } from 'react';cmd+set
