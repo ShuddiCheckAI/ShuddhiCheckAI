@@ -6,7 +6,7 @@ import json
 import zipfile
 from flask import Flask, request, jsonify
 from tensorflow import keras
-from genezio import Genezio
+
 
 app = Flask(__name__)
 
@@ -69,14 +69,14 @@ except (json.JSONDecodeError, FileNotFoundError) as e:
 
 # --- Pricing Information Endpoint ---
 @app.route('/services', methods=['GET'])
-@genezio.expose()
+
 def get_services():
     return jsonify(list(services_and_pricing.values()))
 
 
 # --- Flask Routes (Compliance Check, Chatbot, etc.) ---
 @app.route('/compliance', methods=['POST'])
-@genezio.expose()
+
 def compliance_check():
     nlp = load_spacy_model()
     model = load_keras_model()
@@ -89,7 +89,7 @@ def compliance_check():
 
 
 @app.route('/chat', methods=['POST'])
-@genezio.expose()
+
 def chat():
     nlp = load_spacy_model()
 
