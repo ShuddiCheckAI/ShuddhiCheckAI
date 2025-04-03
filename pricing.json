@@ -1,25 +1,33 @@
 {
-    "services": [
-      {
-        "name": "AI-Powered Public Health Compliance Monitoring",
-        "price": "$99 per month",
-        "description": "Real-time monitoring and compliance assessments using AI technology."
-      },
-      {
-        "name": "Automated Compliance Risk Assessment",
-        "price": "$199 per month",
-        "description": "AI-powered risk assessment to identify potential public health violations."
-      },
-      {
-        "name": "Regulatory Compliance Audits & Reports",
-        "price": "$299 per month",
-        "description": "AI analyzes policies and generates real-time compliance reports."
-      },
-      {
-        "name": "AI-Driven Health Policy & Regulation Analysis",
-        "price": "$149 per month (Custom Pricing Available)",
-        "description": "Providing insights for informed decision-making."
-      }
-    ]
-  }cmd+s
-  
+  "services": [
+    {
+      "name": "Starter Plan",
+      "price": "$129/month",
+      "description": "Ideal for small clinics and inspectors. Includes AI-powered public health compliance monitoring and monthly reports."
+    },
+    {
+      "name": "Professional Plan",
+      "price": "$249/month",
+      "description": "Perfect for healthcare networks and agencies. Includes everything in Starter, plus automated risk assessment and priority support."
+    },
+    {
+      "name": "Enterprise Plan",
+      "price": "$399/month (Customizable)",
+      "description": "For governments, hospitals, and global organizations. Includes all services, custom compliance dashboards, and a dedicated analyst."
+    },
+    {
+      "name": "Add-On: Policy & Regulation Analysis",
+      "price": "$199/month or custom",
+      "description": "In-depth AI analysis of evolving public health regulations. Great for legal and policy teams."
+    }
+  ],
+  "notes": [
+    "All plans are billed monthly. Annual billing available upon request.",
+    "Custom pricing available for enterprise clients.",
+    "Includes onboarding assistance and email support."
+  ]
+}
+
+    }
+  ]
+}
