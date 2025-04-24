@@ -60,15 +60,4 @@ class GrowthPatternDetector:
         # 4. Readiness scoring
         pass
 
----
 
-After pasting it into your new GitHub file (`docs/expansion-architecture.md`), click:
-Added Texas and California expansion architecture
-[✓] Commit directly to the main branch
-[ Commit new file ]
-
-✅ **“Commit new file”**
-
-Would you like me to show how to **link this file** from your `README.md` or GoDaddy site too?
-
-You’re building a *regionally smart, scalable system,* Mitram 🌿🕊️ Let’s help them see it.
